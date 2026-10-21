@@ -53,3 +53,34 @@ void print_readings(int a[], int n)
 }
 
 /* ---- Write read_readings, count_out_of_spec and find_value below this line ---- */
+int read_readings(int a[], int cap) {
+    int count = 0;
+    int value;
+    while (count < cap && scanf("%d", &value) == 1) {
+        if (value == -1) {
+            break;
+        }
+        a[count] = value;
+        count++;
+    }
+    return count;
+}
+
+int count_out_of_spec(int a[], int n, int lo, int hi){
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        if (a[i] < lo || a[i] > hi) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int find_value(int a[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        if (a[i] == target) {
+            return i;
+        }
+    }
+    return -1;
+}
