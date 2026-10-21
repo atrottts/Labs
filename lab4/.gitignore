@@ -1,0 +1,7 @@
+# build products: never commit these
+*.o
+*.dSYM/
+lab4part1/lab4part1
+lab4part2/lab4part2
+lab4part3/lab4part3
+lab4part3/original
