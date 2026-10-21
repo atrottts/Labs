@@ -42,3 +42,17 @@ void print_rule(int width)
 }
 
 /* ---- Write gear_ratio, stage_power and output_rpm below this line ---- */
+double gear_ratio(int driver, int driven) {
+    return (double)driven/driver;
+}
+
+double stage_power(double ratio, int stages) {
+    if (stages <= 0) {
+        return 1.0;
+    }
+    return ratio * stage_power(ratio, stages - 1);
+}
+
+double output_rpm(double input_rpm, double total_ratio) {
+    return input_rpm/total_ratio;
+}
